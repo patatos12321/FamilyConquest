@@ -35,6 +35,12 @@ namespace FamilyConquest.Controllers
             }
             return Ok(new LoggedPlayer(loggedPlayer.Id, loggedPlayer.RefreshAuthToken()));
         }
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Ok(repository.GetAll());
+        }
     }
 
     public class LoggedPlayer(int Id, string authToken)

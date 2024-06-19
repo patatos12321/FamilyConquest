@@ -42,7 +42,7 @@ namespace FamilyConquest.Repositories
 
         public virtual void Delete(int id)
         {
-            GetLiteCollection().Delete(p => p.Id == id);
+            GetLiteCollection().Delete(id);
         }
 
         /// <summary>
