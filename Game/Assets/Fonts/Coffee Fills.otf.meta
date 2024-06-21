@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ee9303c2d337d8349aa5531549936c01
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Coffee Fills
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 59e34f3313e4f8d4d8462cd999fc4ee7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

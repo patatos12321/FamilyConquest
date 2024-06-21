@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 9d2bef8d1638ad647b511cf8458f7131
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Hirarki Signature
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a127bd535b43989409f918ac9049a8c0, type: 3}
+  - {fileID: 12800000, guid: d7c6b4d1382a47242b0782ad28203150, type: 3}
+  - {fileID: 12800000, guid: 542154a8094ebc049b9907088906a19d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
