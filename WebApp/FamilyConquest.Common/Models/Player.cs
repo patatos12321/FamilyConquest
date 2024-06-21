@@ -1,7 +1,7 @@
-﻿using FamilyConquest.Repositories;
+﻿using FamilyConquest.Common.Repositories;
 using LiteDB;
 
-namespace FamilyConquest.Models
+namespace FamilyConquest.Common.Models
 {
     [CollectionName(DbCollectionNames.Player)]
     public class Player : IDocument

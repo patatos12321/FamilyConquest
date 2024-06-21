@@ -1,4 +1,4 @@
-﻿namespace FamilyConquest.Repositories
+﻿namespace FamilyConquest.Common.Repositories
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class CollectionNameAttribute(string name) : Attribute

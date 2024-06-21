@@ -1,6 +1,6 @@
 ﻿using LiteDB;
 
-namespace FamilyConquest.Repositories
+namespace FamilyConquest.Common.Repositories
 {
     public interface IDocument
     {

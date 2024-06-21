@@ -1,7 +1,7 @@
 ﻿using LiteDB;
 using System.Reflection;
 
-namespace FamilyConquest.Repositories
+namespace FamilyConquest.Common.Repositories
 {
     public class GenericRepository<T>(IConfiguration config) : IRepository<T> where T : IDocument
     {

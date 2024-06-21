@@ -1,4 +1,4 @@
-﻿namespace FamilyConquest.Repositories
+﻿namespace FamilyConquest.Common.Repositories
 {
     public static class DbCollectionNames
     {

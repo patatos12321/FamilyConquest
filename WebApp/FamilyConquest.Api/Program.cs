@@ -1,3 +1,4 @@
+using FamilyConquest.Common.Repositories;
 using FamilyConquest.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);

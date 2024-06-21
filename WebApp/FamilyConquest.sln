@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FamilyConquest", "FamilyConquest.Api\FamilyConquest.csproj", "{D4E1813C-14CB-4A3E-9294-D2BC2922F9EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FamilyConquest.Api", "FamilyConquest.Api\FamilyConquest.Api.csproj", "{D4E1813C-14CB-4A3E-9294-D2BC2922F9EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyConquest.Common", "FamilyConquest.Common\FamilyConquest.Common.csproj", "{9DDD14F8-0E22-43B1-AF6F-62F454763842}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D4E1813C-14CB-4A3E-9294-D2BC2922F9EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4E1813C-14CB-4A3E-9294-D2BC2922F9EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4E1813C-14CB-4A3E-9294-D2BC2922F9EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DDD14F8-0E22-43B1-AF6F-62F454763842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DDD14F8-0E22-43B1-AF6F-62F454763842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DDD14F8-0E22-43B1-AF6F-62F454763842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DDD14F8-0E22-43B1-AF6F-62F454763842}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
