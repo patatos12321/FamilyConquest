@@ -6,24 +6,24 @@ namespace FamilyConquest.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PlayerController(ILogger<PlayerController> logger, GenericRepository<Player> repository) : ControllerBase
+    public class PlayerController(ILogger<PlayerController> logger, IRepository<Player> repository) : ControllerBase
     {
 
-        [HttpPost(Name = "Register")]
-        public IActionResult Register(string username, string hashedPassword)
+        [HttpPost("Register")]
+        public IActionResult Register([FromBody] RegisteringPlayer rp)
         {
             var existingPlayers = repository.GetAll();
-            if (existingPlayers.Any(e => e.Username == username))
+            if (existingPlayers.Any(e => e.Username == rp.Username))
             {
-                logger.LogInformation("Someone tried to recreate the '{username}' user", username);
+                logger.LogInformation("Someone tried to recreate the '{username}' user", rp.Username);
                 return BadRequest();
             }
-            repository.Save(new Player(username, hashedPassword));
-            logger.LogInformation("Saved a new user '{username}'", username);
+            repository.Save(new Player(rp.Username, rp.HashedPassword));
+            logger.LogInformation("Saved a new user '{username}'", rp.Username);
             return Ok();
         }
 
-        [HttpPost(Name = "Login")]
+        [HttpPost("Login")]
         public IActionResult Login(string username, string hashedPassword)
         {
             var existingPlayers = repository.GetAll();
@@ -41,11 +41,26 @@ namespace FamilyConquest.Controllers
         {
             return Ok(repository.GetAll());
         }
+
+        //This does Player/Test1
+        [HttpGet("Test1")]
+        public IActionResult Test1(string username, string hashedPassword)
+        { return Ok(); }
+
+        //This does /Test2
+        [HttpGet("/Test2")]
+        public IActionResult Test2(string username, string hashedPassword)
+        { return Ok(); }
     }
 
     public class LoggedPlayer(int Id, string authToken)
     {
         public int Id = Id;
         public string AuthToken = authToken;
+    }
+    public class RegisteringPlayer(string username, string hashedPassword)
+    {
+        public string Username = username;
+        public string HashedPassword = hashedPassword;
     }
 }

@@ -4,12 +4,23 @@ using LiteDB;
 namespace FamilyConquest.Models
 {
     [CollectionName(DbCollectionNames.Player)]
-    public class Player(string username, string hashedPassword) : IDocument
+    public class Player : IDocument
     {
+        public Player()
+        {
+            Username = string.Empty;
+            HashedPassword = string.Empty;
+        }
+        public Player(string username, string hashedPassword)
+        {
+            Username = username;
+            HashedPassword = hashedPassword;
+        }
+
         [BsonId]
         public int Id { get; set; }
-        public string Username { get; set; } = username;
-        private string HashedPassword { get; set; } = hashedPassword;
+        public string Username { get; set; }
+        public string HashedPassword { get; set; }
         private string TempToken { get; set; } = GenerateAuthToken();
         private DateTime TokenExpiration { get; set; }
         public bool IsValidPassword(string hashedPassword) => hashedPassword == HashedPassword;

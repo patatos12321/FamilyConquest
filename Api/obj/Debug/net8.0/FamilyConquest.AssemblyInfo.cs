@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FamilyConquest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b4103b54364bd095ba04abe49c361f2bf700a52")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88264f726d5e10fe2613f3fc25882b923cf334af")]
 [assembly: System.Reflection.AssemblyProductAttribute("FamilyConquest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FamilyConquest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

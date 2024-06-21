@@ -5,7 +5,7 @@ namespace FamilyConquest.Repositories
 {
     public class GenericRepository<T>(IConfiguration config) : IRepository<T> where T : IDocument
     {
-        protected readonly LiteDatabase _database = new LiteDatabase(config["DatabasePath"]);
+        protected readonly LiteDatabase _database = new(config["DatabasePath"]);
 
         public virtual IEnumerable<T> GetAll()
         {
