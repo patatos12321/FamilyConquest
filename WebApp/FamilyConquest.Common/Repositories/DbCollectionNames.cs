@@ -7,5 +7,6 @@
         //Round may be embedded inside challenges
         public const string Round = "rounds";
         //I think matches and matchEvents will be embedded inside the round
+        public const string Deck = "decks";
     }
 }

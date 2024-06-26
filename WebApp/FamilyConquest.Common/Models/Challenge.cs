@@ -18,6 +18,10 @@ namespace FamilyConquest.Common.Models
         [BsonRef(DbCollectionNames.Player)]
         public int ChallengeeId { get; set; }
         public bool Finished { get; set; } = false;
+        public List<Round> Rounds { get; set; } = [];
+        public int NbRounds { get; set; } = 8;
+
+        public bool IsFinished => Rounds.Count == NbRounds;
         public bool IsBotFight => ChallengeeId == 0;
     }
 }
