@@ -11,7 +11,7 @@ public class DumbButtonBehavior : MonoBehaviour
             return;
         _clickable = false;
 
-        var registerManager = GameObject.FindObjectOfType<RegisterManagerBehavior>();
+        var registerManager = FindObjectOfType<RegisterManagerBehavior>();
         registerManager.AddColor(Color);
         Destroy(this.gameObject, 0.1f);
     }

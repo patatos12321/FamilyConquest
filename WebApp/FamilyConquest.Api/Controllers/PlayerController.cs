@@ -1,5 +1,5 @@
-using FamilyConquest.Models;
-using FamilyConquest.Repositories;
+using FamilyConquest.Common.Models;
+using FamilyConquest.Common.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FamilyConquest.Controllers
@@ -40,6 +40,12 @@ namespace FamilyConquest.Controllers
         public IActionResult GetAll()
         {
             return Ok(repository.GetAll());
+        }
+
+        [HttpGet("{Id}")]
+        public IActionResult GetAll(int id)
+        {
+            return Ok(repository.GetById(id));
         }
 
         //This does Player/Test1

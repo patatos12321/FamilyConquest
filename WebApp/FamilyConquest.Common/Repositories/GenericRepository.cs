@@ -1,4 +1,5 @@
 ﻿using LiteDB;
+using Microsoft.Extensions.Configuration;
 using System.Reflection;
 
 namespace FamilyConquest.Common.Repositories

@@ -1,3 +1,4 @@
+using DataContracts;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,12 +13,7 @@ public class RegisterManagerBehavior : MonoBehaviour
     private string password = "";
     void Start()
     {
-        usernameField = GameObject.FindObjectOfType<InputField>();
-    }
-
-    void Update()
-    {
-        
+        usernameField = FindObjectOfType<InputField>();
     }
 
     public void AddColor(string color)
@@ -25,17 +21,13 @@ public class RegisterManagerBehavior : MonoBehaviour
         password += color;
     }
 
-    public class Player
-    {
-        public string Username { get; set; }
-        public string HashedPassword { get; set; }
-    }
+    
 
     public void Register()
     {
         ValidatePlayer();
         var player = GetPlayer();
-        HttpClientHelper.SetToken(HttpClientHelper.Post("/Player/Register", player).Content.ReadAsStringAsync().GetAwaiter().GetResult());
+        HttpClientHelper.SetToken(HttpClientHelper.Post<string>("/Player/Register", player));
         GoToMainMenu();
     }
 
@@ -43,8 +35,8 @@ public class RegisterManagerBehavior : MonoBehaviour
     {
         ValidatePlayer();
         var player = GetPlayer();
-        var loginResult = HttpClientHelper.Post("/Player/Register", player);
-        HttpClientHelper.SetToken(loginResult.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+        var loginResult = HttpClientHelper.Post<string>("/Player/Register", player);
+        HttpClientHelper.SetToken(loginResult);
         GoToMainMenu();
     }
 

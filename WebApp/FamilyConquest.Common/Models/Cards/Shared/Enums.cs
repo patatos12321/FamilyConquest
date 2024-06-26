@@ -8,6 +8,16 @@ namespace FamilyConquest.Common.Models.Cards.Shared
 {
     public enum CardIds
     {
-        Default
+        Rat
+    }
+    public enum Tribes
+    {
+        Animal,
+        Longtin
+    }
+    public enum Rarity
+    {
+        Common,
+        Rare
     }
 }
