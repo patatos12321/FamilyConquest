@@ -23,6 +23,7 @@ namespace FamilyConquest.Common.Models
         public string HashedPassword { get; set; }
         private string TempToken { get; set; } = GenerateAuthToken();
         private DateTime TokenExpiration { get; set; }
+        public bool IsBot { get; set; } = false;
         public bool IsValidPassword(string hashedPassword) => hashedPassword == HashedPassword;
         public bool IsValidToken(string token) => TempToken == token && TokenExpiration > DateTime.Now;
         public string RefreshAuthToken()
