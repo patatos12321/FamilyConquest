@@ -15,7 +15,7 @@ namespace FamilyConquest.Controllers
             var connectedPlayer = GetPlayer(authToken);
             if (connectedPlayer == null) { return Unauthorized(); }
 
-            var challengee = GetPlayer(authToken);
+            var challengee = GetPlayer(challengeeId);
             if (challengee == null) { return BadRequest(); }
 
             var existingPendingChallenges = challengeRepository.GetAll().Where(c => c.Challenger.Id == connectedPlayer.Id && !c.Finished);

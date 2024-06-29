@@ -1,3 +1,4 @@
+using FamilyConquest.Common.Models;
 using FamilyConquest.Common.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,8 +20,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+Migrate(app);
+
 app.UseHttpsRedirection();
 
 app.MapControllers();
 
 app.Run();
+
+static void Migrate(WebApplication app)
+{
+    var playerRepo = app.Services.GetRequiredService<IRepository<Player>>();
+    if (!playerRepo.GetAll().Any(p => p.IsBot))
+    {
+        playerRepo.Save(new Player() { IsBot = true, Username = "Jean-Jacques", HashedPassword = Guid.NewGuid().ToString() });
+    }
+}

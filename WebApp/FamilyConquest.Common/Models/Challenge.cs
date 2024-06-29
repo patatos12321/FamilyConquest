@@ -1,4 +1,5 @@
-﻿using FamilyConquest.Common.Repositories;
+﻿using FamilyConquest.Common.Models.Cards.Shared;
+using FamilyConquest.Common.Repositories;
 using LiteDB;
 
 namespace FamilyConquest.Common.Models
@@ -15,6 +16,7 @@ namespace FamilyConquest.Common.Models
         public bool Finished { get; set; } = false;
         public List<Round> Rounds { get; set; } = [];
         public int NbRounds { get; set; } = 8;
+        public ChallengeState ChallengeState { get; set; } = ChallengeState.Drafting;
 
         public bool IsFinished => Rounds.Count == NbRounds && Rounds.FirstOrDefault(r => r.Nb == NbRounds)?.Winner != null;
         public bool IsBotFight => Challengee == null;

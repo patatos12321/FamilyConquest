@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FamilyConquest.Common.Models.Cards.Shared
+﻿namespace FamilyConquest.Common.Models.Cards.Shared
 {
     public enum CardIds
     {
@@ -20,4 +14,5 @@ namespace FamilyConquest.Common.Models.Cards.Shared
         Common,
         Rare
     }
+    public enum ChallengeState { Drafting }
 }
