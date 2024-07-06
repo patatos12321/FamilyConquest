@@ -2,7 +2,12 @@
 {
     public enum CardIds
     {
-        Rat
+        Brutus,
+        Doby,
+        Peanut, 
+        Rat,
+        Shirley,
+        ThorSniper
     }
     public enum Tribes
     {
@@ -11,6 +16,7 @@
     }
     public enum Rarity
     {
+        Starter,
         Common,
         Rare
     }

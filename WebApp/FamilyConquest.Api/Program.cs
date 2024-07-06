@@ -1,5 +1,6 @@
 using FamilyConquest.Common.Models;
 using FamilyConquest.Common.Repositories;
+using LiteDB;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers().AddJsonOptions((jo) => { jo.JsonSerializerOptions.IncludeFields = true; });
 builder.Services.AddSingleton(typeof(IRepository<>), typeof(GenericRepository<>));
+builder.Services.AddSingleton(sp => new LiteDatabase(sp.GetRequiredService<IConfiguration>()["DatabasePath"]));
 
 var app = builder.Build();
 

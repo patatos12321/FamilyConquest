@@ -11,4 +11,5 @@ namespace FamilyConquest.Common.Models.Cards
         Tribes[] Tribes { get; }
         Rarity Rarity { get; }
     }
+    public class CardList : List<ICard> { }
 }

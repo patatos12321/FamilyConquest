@@ -18,15 +18,15 @@ namespace FamilyConquest.Controllers
             var challengee = GetPlayer(challengeeId);
             if (challengee == null) { return BadRequest(); }
 
-            var existingPendingChallenges = challengeRepository.GetAll().Where(c => c.Challenger.Id == connectedPlayer.Id && !c.Finished);
+            var existingPendingChallenges = challengeRepository.GetAll().Where(c => c.Challenger.Id == connectedPlayer.Id && !c.IsFinished);
             if (existingPendingChallenges.Any()) { return BadRequest(); }
 
             var challenge = new Challenge
             {
                 Challenger = connectedPlayer,
-                Challengee = challengee,
-                Finished = false,
+                Challengee = challengee
             };
+            challenge.PrepareNewRound();
 
             challengeRepository.Save(challenge);
             return Ok(challenge);
@@ -37,7 +37,7 @@ namespace FamilyConquest.Controllers
         {
             var player = GetPlayer(authToken);
             if (player == null) { return Unauthorized(); }
-            return Ok(challengeRepository.GetAll().Where(c => c.Challenger.Id == player.Id || c.Challengee.Id == player.Id && !c.Finished));
+            return Ok(challengeRepository.GetAll().Where(c => c.Challenger.Id == player.Id || c.Challengee.Id == player.Id && !c.IsFinished));
         }
 
         private Player? GetPlayer(string authToken) => playerRepository.GetAll().FirstOrDefault(p => p.IsValidToken(authToken));

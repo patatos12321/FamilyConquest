@@ -1,13 +1,10 @@
 ﻿using LiteDB;
-using Microsoft.Extensions.Configuration;
 using System.Reflection;
 
 namespace FamilyConquest.Common.Repositories
 {
-    public class GenericRepository<T>(IConfiguration config) : IRepository<T> where T : IDocument
+    public class GenericRepository<T>(LiteDatabase database) : IRepository<T> where T : IDocument
     {
-        protected readonly LiteDatabase _database = new(config["DatabasePath"]);
-
         public virtual IEnumerable<T> GetAll()
         {
             return GetLiteCollection().FindAll();
@@ -59,10 +56,10 @@ namespace FamilyConquest.Common.Repositories
 
             if (collectionNameAttribute == null)
             {
-                return _database.GetCollection<T>(typeof(T).Name);
+                return database.GetCollection<T>(typeof(T).Name);
             }
 
-            return _database.GetCollection<T>(collectionNameAttribute.Name);
+            return database.GetCollection<T>(collectionNameAttribute.Name);
         }
 
         protected virtual ILiteCollection<R> GetLiteCollectionForType<R>()
@@ -73,10 +70,10 @@ namespace FamilyConquest.Common.Repositories
 
             if (collectionNameAttribute == null)
             {
-                return _database.GetCollection<R>(typeof(T).Name);
+                return database.GetCollection<R>(typeof(T).Name);
             }
 
-            return _database.GetCollection<R>(collectionNameAttribute.Name);
+            return database.GetCollection<R>(collectionNameAttribute.Name);
         }
     }
 }

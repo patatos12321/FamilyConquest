@@ -9,6 +9,8 @@ namespace FamilyConquest.Common.Models
         public const int NbDraftPicks = 2;
 
         public int Nb { get; set; } = 1;
+        public bool Finished { get; set; } = false;
+
         [BsonRef(DbCollectionNames.Player)]
         public Player? Winner { get; set; }
         public Dictionary<int, List<ICard>> ProposedCardsPerPlayerId { get; set; } = [];
