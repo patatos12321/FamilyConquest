@@ -1,0 +1,10 @@
+{
+  "CardId": 1,
+  "Name": "Brutus",
+  "Power": 4,
+  "PhotoName": "Brutus",
+  "Tribes": [
+    1
+  ],
+  "Rarity": 1
+}

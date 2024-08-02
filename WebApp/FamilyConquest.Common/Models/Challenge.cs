@@ -2,7 +2,6 @@
 using FamilyConquest.Common.Models.Cards.Shared;
 using FamilyConquest.Common.Repositories;
 using LiteDB;
-using System.Text;
 
 namespace FamilyConquest.Common.Models
 {
@@ -40,7 +39,8 @@ namespace FamilyConquest.Common.Models
         }
 
         public static CardList GetDraft(int nbCards, int nbRound, CardList? PreviousDeck) 
-        { 
+        {
+            return new ();
         }
     }
 }

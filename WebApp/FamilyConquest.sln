@@ -5,7 +5,11 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FamilyConquest.Api", "FamilyConquest.Api\FamilyConquest.Api.csproj", "{D4E1813C-14CB-4A3E-9294-D2BC2922F9EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyConquest.Common", "FamilyConquest.Common\FamilyConquest.Common.csproj", "{9DDD14F8-0E22-43B1-AF6F-62F454763842}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FamilyConquest.Common", "FamilyConquest.Common\FamilyConquest.Common.csproj", "{9DDD14F8-0E22-43B1-AF6F-62F454763842}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{7ED0F9A5-954D-41B4-B453-ED14ABA2B5E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardsToJson", "CardsToJson\CardsToJson.csproj", "{7B649B48-A3E8-46A2-87DB-30BF71C455F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{9DDD14F8-0E22-43B1-AF6F-62F454763842}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DDD14F8-0E22-43B1-AF6F-62F454763842}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DDD14F8-0E22-43B1-AF6F-62F454763842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B649B48-A3E8-46A2-87DB-30BF71C455F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B649B48-A3E8-46A2-87DB-30BF71C455F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B649B48-A3E8-46A2-87DB-30BF71C455F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B649B48-A3E8-46A2-87DB-30BF71C455F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B649B48-A3E8-46A2-87DB-30BF71C455F2} = {7ED0F9A5-954D-41B4-B453-ED14ABA2B5E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4CCE5E63-FD07-47DF-86B3-9C62D7EC2E5F}
